@@ -1,0 +1,54 @@
+@charset "utf-8";
+
+/*
+	CEN2002 Final Project Final Phase - General Style Sheet
+	Author: Dustin Rush
+	Date: 5/8/23
+	Filename: style.css
+*/
+
+/* 3:03 PM: Finally. I have these pages looking exactly how I want them. Hopefully I don't have to mess with them anymore. */
+
+/* Flex styles */
+
+body {
+    display: flex;
+    flex-flow: row wrap;
+	align-items: center;
+	justify-content: center;
+}
+
+header, footer {
+    width: 100%;
+}
+
+/* Alignment style */
+
+.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	object-fit: scale-down;
+}
+
+/* Mobile screen width stuff */
+
+@media only screen and (max-width: 480px) {
+    img {
+        max-width: 480px;
+    }
+}
+
+/* Desktop/tablet stuff */
+
+@media only screen and (min-width: 481px) {
+    nav.horizontal ul {
+        display: flex;
+        flex-flow: row nowrap;
+    }
+
+    nav.horizontal li {
+        flex: 1 1 auto;
+    }
+}
