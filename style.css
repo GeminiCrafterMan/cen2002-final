@@ -7,19 +7,13 @@
 	Filename: style.css
 */
 
-/* 3:03 PM: Finally. I have these pages looking exactly how I want them. Hopefully I don't have to mess with them anymore. */
-
 /* Flex styles */
 
 body {
-    display: flex;
-    flex-flow: row wrap;
+	display: flex;
+	flex-flow: column wrap;
 	align-items: center;
 	justify-content: center;
-}
-
-header, footer {
-    width: 100%;
 }
 
 /* Alignment style */
@@ -35,20 +29,20 @@ header, footer {
 /* Mobile screen width stuff */
 
 @media only screen and (max-width: 480px) {
-    img {
-        max-width: 480px;
-    }
+	img {
+		max-width: 480px;
+	}
 }
 
 /* Desktop/tablet stuff */
 
 @media only screen and (min-width: 481px) {
-    nav.horizontal ul {
-        display: flex;
-        flex-flow: row nowrap;
-    }
+	nav.horizontal ul {
+		display: flex;
+		flex-flow: row nowrap;
+	}
 
-    nav.horizontal li {
-        flex: 1 1 auto;
-    }
+	nav.horizontal li {
+		flex: 1 1 auto;
+	}
 }
