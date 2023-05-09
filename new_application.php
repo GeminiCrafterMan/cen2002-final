@@ -14,6 +14,7 @@
 		<meta charset="utf-8">
 		<title>New Application</title>
 		<link href="style.css" rel="stylesheet" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 	</head>
 	<body>
 		<header>
@@ -38,7 +39,7 @@
 				<label for="phone">Phone number:</label><br>
 				<input type="phone" id="phone" name="phone" placeholder="123-456-7890"><br><br>
 
-				<input type="submit"> <!--Replace this with an actual nice button instead of the generic one.-->
+				<input type="submit" class="button">
 			</form>
 		</main>
 	</body>

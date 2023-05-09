@@ -1,0 +1,24 @@
+<?php
+?>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+
+		<!--
+			CEN2002 Final Project Final Phase - Application Page
+			Author: Dustin Rush
+			Date: 5/8/23
+			Filename: application.html
+		-->
+	
+		<meta charset="utf-8">
+		<title>Application</title>
+		<link href="style.css" rel="stylesheet" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+	<body>
+		<header><h1>Application No.: ###</h1></header>
+		<main><h2>Name: Name</h2></main>
+		<footer><h3>Phone number: ###-###-####</h3></footer>
+	</body>
+</html>
