@@ -1,35 +1,47 @@
 <?php
-?>
-<!DOCTYPE html>
-<html lang="en">
-	<head>
+	session_start(); // start a new session
 
-		<!--
-			CEN2002 Final Project Final Phase - Login Page
-			Author: Dustin Rush
-			Date: 5/8/23
-			Filename: login.html
-		-->
-	
-		<meta charset="utf-8">
-		<title>Login</title>
-		<link href="style.css" rel="stylesheet" />
-	</head>
-	<body>
-		<header>
-			<h1 style="text-align: center;">Log in</h1>
-		</header>
-		<main>
-			<form action=""> <!--Insert the PHP stuff here to actually "log in" to the account-->
-				<label for="email">Email address:</label><br>
-				<input type="email" id="email" name="email" placeholder="example@test.com"><br><br>
-				<label for="password">Password:</label><br>
-				<input type="password" id="password" name="password" placeholder="Password"><br><br>
-				<input type="submit"> <!--Replace this with an actual nice button instead of the generic one.-->
-			</form>
-		</main>
-		<footer>
-			<p>Don't have an account? Sign up <a href="signup.html">here.</a></p>
-		</footer>
-	</body>
-</html>
+	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+		// get the form data
+		$email = $_POST['email'];
+		$pass = $_POST['password'];
+	}
+	$servername = "localhost";
+	$username = "root";
+	$password = "";
+	$dbname = "dorm";
+
+	// Create connection
+	$conn = new mysqli($servername, $username, $password, $dbname);
+
+	// Check connection
+	if ($conn->connect_error) {
+		die("Connection failed: " . $conn->connect_error);
+	}
+
+	$sql = "SELECT email, password FROM user WHERE email = '$email'";
+
+	$result = mysqli_query($conn, $sql);
+
+	if (mysqli_num_rows($result) == 1) {
+		$row = mysqli_fetch_assoc($result);
+		echo $pass . " " . $row['password'] . " ";
+		if (password_verify($pass, $row['password'])) {
+			// if the credentials are valid, set a session variable to indicate that the user is logged in
+			$_SESSION['loggedin'] = true;
+			$_SESSION['userid'] = $row['id'];
+
+			// redirect the user to the homepage
+			header('Location: home.html');
+			exit;
+		} else {
+			// if the credentials are invalid, display an error message
+			echo 'Invalid username or password. bleh';
+		}
+	} else {
+		// if the credentials are invalid, display an error message
+		echo 'Invalid username or password. bleh bleh';
+	}
+
+	mysqli_close($conn);
+?>
