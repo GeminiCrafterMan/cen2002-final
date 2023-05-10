@@ -95,6 +95,8 @@
 			-->
 			<?php
 				foreach ($applications as $value) {
+					//echo '<button class="button" onclick='window.location.href = "application.html"'><h4>View Application # - Name</h4></button>';
+					echo '<button class=' . "button" . " " .  'onclick="window.location.href = ' . 'application.html'. '><h4>View Application ' .  $value->id . '-' . $value->$fullname . '</h4></button>';
 					echo '<button class=' . "button" .  'onclick="window.location.href = ' . 'application.html'. '><h4>View Application' .  $value->id . '-' . $value->$fullname . '</h4></button>';
 				}
 			?>
