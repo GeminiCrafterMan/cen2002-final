@@ -19,7 +19,7 @@
 			<h1 style="text-align: center;">New Application</h1>
 		</header>
 		<main>
-			<form action=""> <!--Insert the PHP stuff here to actually submit the form to the system.-->
+			<form action="submit_application.php" mehtod="post"> <!--Insert the PHP stuff here to actually submit the form to the system.-->
 				<label for="fname">First name:</label><br>
 				<input type="text" id="fname" name="fname" placeholder="John"><br><br>
 
@@ -27,11 +27,11 @@
 				<input type="text" id="lname" name="lname" placeholder="Doe"><br> <!--One less <br> because of the default spacing for paragraphs.-->
 
 				<p>Gender:
-				<input type="radio" id="male" name="gender" value="male">
+				<input type="radio" id="male" name="gender" value="1">
 				<label for="male">Male</label>
-				<input type="radio" id="female" name="gender" value="female">
+				<input type="radio" id="female" name="gender" value="2">
 				<label for="female">Female</label>
-				<input type="radio" id="other" name="gender" value="other">
+				<input type="radio" id="other" name="gender" value="3">
 				<label for="other">Other</label><br></p>
 
 				<label for="phone">Phone number:</label><br>
