@@ -1,6 +1,7 @@
 <?php
 	session_start(); // start a new session
 
+
 	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		// get the form data
 		$email = $_POST['email'];
